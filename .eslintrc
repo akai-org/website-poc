@@ -1,0 +1,27 @@
+{
+    "plugins": [
+      "node"
+    ],
+    "env": {
+      "browser": true,
+      "node": true,
+      "jasmine": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:node/recommended"
+    ],
+    "rules": {
+      "node/exports-style": [
+        "error",
+        "module.exports"
+      ]
+    },
+    "globals": {
+      "$": true,
+      "CONFIG": true
+    },
+    "parserOptions": {
+      "sourceType": "module"
+    }
+  }
