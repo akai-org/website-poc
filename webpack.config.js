@@ -1,7 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const extractPlugin = new ExtractTextPlugin({
@@ -13,6 +14,12 @@ module.exports = {
     output: {
         path: __dirname + "/dist",
         filename: 'bundle.js',
+    },
+    devServer: {
+        contentBase: __dirname + "/src/",
+        inline: true,
+        host: '127.0.0.1',
+        port: 8080,
     },
     module: {
         rules: [
@@ -36,39 +43,29 @@ module.exports = {
                 use: extractPlugin.extract({
                     use: ['css-loader', 'sass-loader']
                 })
-            },
-            {
-                test: /\.html$/,
-                use: ['html-loader']
-            },
-            {
-                test: /\.(jpg|png)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: 'img/',
-                    }
-                }]
-            },
-            {
-                test: /\.(html)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                    }
-                }],
-                exclude: path.resolve(__dirname, 'src/index.html')
             }
         ]
     },
     plugins: [
         extractPlugin,
         // new webpack.optimize.UglifyJsPlugin(),
-        new HtmlWebpackPlugin({
-            template: 'src/index.html',
+        new BrowserSyncPlugin({
+            host: 'localhost',
+            port: 8080,
+            server: {baseDir: ['dist']}
         }),
+        new CopyWebpackPlugin([
+            {
+                context: 'src',
+                from: '*.html',
+                to: './'
+            },
+            {
+                context: 'src',
+                from: 'img/*',
+                to: './'
+            }
+        ]),
         new StyleLintPlugin({})
     ]
 }
