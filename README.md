@@ -6,12 +6,8 @@ Install required dependencies
 npm install
 ```
 ## Running
-Run dev server
+Run development server
 ```
-npm run build
-```
-Or build for production
-```
-npm run build-prod
+npm start
 ```
 
