@@ -1,1 +1,4 @@
-// @import 'filename'; - import from _filename.scss
+@import url('./utilities/_variables.scss');
+@import url('./utilities/_placeholders.scss');
+@import url('./fonts/_fonts.scss');
+@import url('./basic/_basic.scss');
