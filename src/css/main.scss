@@ -2,3 +2,14 @@
 @import url('./utilities/_placeholders.scss');
 @import url('./fonts/_fonts.scss');
 @import url('./basic/_basic.scss');
+
+@font-face {
+    font-family: 'fontawesome';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/fontawesome.eot?45770787');
+    src: url('../font/fontawesome.eot?45770787#iefix') format('embedded-opentype'),
+        url('../font/fontawesome.woff?45770787') format('woff'),
+        url('../font/fontawesome.ttf?45770787') format('truetype'),
+        url('../font/fontawesome.svg?45770787#fontawesome') format('svg');
+}
