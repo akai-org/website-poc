@@ -1,25 +1,26 @@
 const path = require('path');
 const webpack = require('webpack');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
+const BrowserSync = require('browser-sync-webpack-plugin');
+const ExtractText = require('extract-text-webpack-plugin');
+const CopyWebpack = require('copy-webpack-plugin');
+const StyleLint = require('stylelint-webpack-plugin');
+// const uglifyJs = require('uglifyjs-webpck-plugin');
 
-const extractPlugin = new ExtractTextPlugin({
+const extractText = new ExtractText({
     filename: 'main.css'
-})
+});
 
 module.exports = {
-    entry: './src/js/app.js',
+    entry: ['babel-polyfill','./src/js/app.js'],
     output: {
-        path: __dirname + "/dist",
-        filename: 'bundle.js',
+        path: path.resolve(__dirname + '/dist'),
+        filename: 'bundle.js'
     },
     devServer: {
-        contentBase: __dirname + "/src/",
-        inline: true,
+        contentBase: path.resolve(__dirname + "./src"),
+        // inline: true,
         host: '127.0.0.1',
-        port: 8080,
+        port: 8080
     },
     module: {
         rules: [
@@ -28,33 +29,39 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: "eslint-loader",
+                        loader: 'eslint-loader'
                     },
                     {
                         loader: 'babel-loader',
-                        options: {
-                            presets: ['env']
+                        query: {
+                            presets: ['env', 'stage-0']
                         }
                     }
                 ]
             },
             {
                 test: /\.scss$/,
-                use: extractPlugin.extract({
+                use: extractText.extract({
                     use: ['css-loader', 'sass-loader']
                 })
+            }, 
+            {
+                test: /.(png|woff(2)?|eot|ttf|svg)([0-9]+)?$/,
+                loader: 'file-loader'
             }
         ]
     },
     plugins: [
-        extractPlugin,
-        // new webpack.optimize.UglifyJsPlugin(),
-        new BrowserSyncPlugin({
-            host: 'localhost',
+        extractText,
+        /* new UglifyJsPlugin({
+            test: /\.js$/
+        }),*/
+        new BrowserSync({
+            host: '127.0.0.1',
             port: 8080,
             server: {baseDir: ['dist']}
         }),
-        new CopyWebpackPlugin([
+        new CopyWebpack([
             {
                 context: 'src',
                 from: '*.html',
@@ -66,6 +73,8 @@ module.exports = {
                 to: './'
             }
         ]),
-        new StyleLintPlugin({})
+        new StyleLint({
+            configFile: '.stylelintrc'
+        })
     ]
 }
