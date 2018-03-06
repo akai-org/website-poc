@@ -13,3 +13,19 @@
         url('../font/fontawesome.ttf?45770787') format('truetype'),
         url('../font/fontawesome.svg?45770787#fontawesome') format('svg');
 }
+
+.icon {
+    font-family: 'fontawesome';
+    font-style: normal;
+}
+
+.icon-cog-alt:before { content: '\e800'; }
+.icon-road:before { content: '\e801'; }
+.icon-link:before { content: '\e802'; }
+.icon-users:before { content: '\e803'; }
+.icon-github-circled:before { content: '\f09b'; }
+.icon-lightbulb:before { content: '\f0eb'; }
+.icon-desktop:before { content: '\f108'; }
+.icon-code:before { content: '\f121'; }
+.icon-calendar-empty:before { content: '\f133'; }
+.icon-handshake-o:before { content: '\f2b5'; }
