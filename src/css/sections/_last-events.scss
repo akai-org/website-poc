@@ -1,0 +1,5 @@
+@import '../utilities/placeholders';
+
+.last-events {
+    @extend %container;
+}

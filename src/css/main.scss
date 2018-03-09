@@ -1,4 +1,7 @@
-@import url('./utilities/_variables.scss');
-@import url('./utilities/_placeholders.scss');
-@import url('./fonts/_fonts.scss');
-@import url('./basic/_basic.scss');
+@import 'utilities/variables';
+@import 'utilities/placeholders';
+@import 'fonts/fonts';
+@import 'basic/basic';
+
+@import 'sections/last-events';
+@import 'sections/projects';
