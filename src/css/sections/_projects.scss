@@ -1,0 +1,10 @@
+@import '../utilities/placeholders';
+
+.projects {
+    @extend %container;
+
+    i {
+        font-size: 2.2rem;
+        margin-left: 10px;
+    }
+}

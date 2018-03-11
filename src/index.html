@@ -12,7 +12,7 @@
     <header>
 
     </header>
-    <div>
+    <div class="main">
         <div class="main-col">
             <!-- main column, left side -->
             <section class="slider">
@@ -23,15 +23,43 @@
             </article>  
         </div>
         <aside>
-            <!-- sidebar, right side -->
             <section class="calendar">
-                <!-- Calendar -->
+                <h2>Kalendarz</h2>
+                <div class="calendar-div"></div>
             </section>
             <section class="last-events">
-                <!-- Last activities sidebar -->
+                <h2>Ostatnie działania</h2>
+                <ul>
+                    <li>
+                        <h4><a href="#">AKAI Camp Backend</a></h4>
+                        <p class="description">Wysłuchaliśmy prelekcji na temat Node.js, Ruby on Rails i Elixira.</p>
+                    </li>
+                    <li>
+                        <h4><a href="#">Warsztaty z Ruby on Rails</a></h4>
+                        <p class="description">Kolejne spotkanie było poświętone tworzeniu kontrolerów i routingu.</p>
+                    </li>
+                    <li>
+                        <h4><a href="#">Monoliths vs microservices</a></h4>
+                        <p class="description">Ian z Paymentwall omówił różnice międzypopularnymi architekturami.</p>
+                    </li>
+                </ul>
             </section>
             <section class="projects">
-                <!-- Links to projects on github -->
+                <h2>Projekty</h2>
+                <ul>
+                    <li>
+                        <h4><a href="#">Trios</a></h4>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-link"></i></a>
+                        <p class="description">Uzupełnij trzy luki w zdaniach jednym wyrazem, ale w różnych znaczeniach i kontekstach</p>
+                    </li>
+                    <li>
+                        <h4><a href="#">Polimapa</a></h4>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-link"></i></a>
+                        <p class="description">Mapa budynków Politechniki Poznańskiej z wyszukiwarką</p>
+                    </li>
+                </ul>
             </section>
         </aside>
     </div>
@@ -47,7 +75,6 @@
     <footer>
 
     </footer>
-
     <script src="bundle.js"></script>
 </body>
 </html>
