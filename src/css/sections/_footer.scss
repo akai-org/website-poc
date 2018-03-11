@@ -1,0 +1,15 @@
+footer {
+    align-items: center;
+    background: $dark-gray;
+    display: flex;
+    height: 105px;
+    margin-top: 80px;
+    padding: 0 12.5%;
+    
+    p {
+        color: $white;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        margin: auto 25px;
+    }
+}
