@@ -4,9 +4,9 @@
     @extend %container;
    
     box-sizing: border-box;
-    margin: auto;
-    width: 75%; 
     font-size: 1.6rem;
+    margin: auto;
+    width: 75%;
     
     a {
         font-size: inherit;
@@ -16,8 +16,8 @@
 
 .members-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     font-size: 1.6rem;
+    grid-template-columns: repeat(3, 1fr);
     margin-left: -30px;
     
     .highlight {
@@ -47,10 +47,10 @@
 }
 
 .member-img {
-    display: block;
-    width: 85px;
-    height: 85px;
     border-radius: 50%;
-    object-fit: cover;
+    display: block;
+    height: 85px;
     margin: 0 15px;
+    object-fit: cover;
+    width: 85px;
 }
