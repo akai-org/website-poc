@@ -8,7 +8,11 @@ export class Calendar {
         this.parent = parent;
         this.container = null;
 
-        this.highlighted = [1,3,5];
+        this.highlighted = [
+            {day: 1, desc: 'dzień pierwszy'},
+            {day: 13, desc: 'dzień trzynasty'},
+            {day: 17, desc: 'lorem ipsum'}
+        ]
 
         this.init();
     }
@@ -17,12 +21,14 @@ export class Calendar {
         this.container.className = 'calendar-container'
         this.parent.appendChild(this.container);
         this.genCalendar();
+        this.bindEvents();
     }
     genCalendar() {
         // init table
         this.container.innerHTML = '';
         const table = document.createElement('table');
         table.classList.add('calendar-table');
+        table.id = 'calendar-table';
         this.container.appendChild(table);
 
         // gen day-names
@@ -34,6 +40,7 @@ export class Calendar {
             th.innerHTML = day;
             tr.appendChild(th);
         }
+        table.appendChild(tr);
 
         // populate table with days
         const dayInMonth = new Date(this.year, this.month+1, 0).getDate();
@@ -64,14 +71,18 @@ export class Calendar {
                 table.appendChild(tr);
             }
 
+            // create day element
             let td = document.createElement('td');
             td.innerHTML = i - firstMonthDay + 2;
             td.dayNr = i - firstMonthDay + 2;
 
-            if (this.highlighted.includes(i - firstMonthDay + 2))
-                td.classList.add('highlighted-day');
-
+            // add classes in order to style element properly
             td.classList.add('day');
+
+            if (this.highlighted.map(elem => elem.day).includes(i - firstMonthDay + 2)) {
+                td.classList.add('highlighted-day');
+                td.setAttribute('title',this.highlighted.filter(elem => elem.day === i - firstMonthDay + 2)[0].desc);
+            }
 
             if (this.year === this.now.getFullYear() && this.month == this.now.getMonth() && this.day === i-firstMonthDay+2)
                 td.classList.add('current-day');
@@ -80,9 +91,9 @@ export class Calendar {
         }
     }
     bindEvents() {
-        this.container.addEventListener('onmouseover', function(e) {
-            if (e.target.tagName.toLower() === 'td' && e.target.clasList.contains('day')) {
-                //action
+        this.container.addEventListener('click', function(e) {
+            if (e.target.tagName.toLowerCase() === 'td' && e.target.classList.contains('highlighted-day')) {
+                // action
             }
         }.bind(this));
     }
