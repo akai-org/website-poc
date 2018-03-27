@@ -1,0 +1,111 @@
+.slider {
+    background-color: $slider-background;
+    box-shadow: inset 0 0 0 1000px rgba(52, 73, 94, 0.5);
+    height: 58vh;
+    position: relative;
+    transition: background-image 2s ease-in-out, background-image 2s ease-in-out, background-position 2s ease-in-out;
+    transition-delay: -0.5s;
+}
+
+.slider-slide {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+
+    * {
+        color: $gray-bkg;
+        font-family: 'Open Sans', sans-serif;
+        left: -3rem;
+        margin: 10px 40px;
+        opacity: 0;
+    }
+}
+
+.slider-slide-active {
+    opacity: 1;
+
+    * {
+        left: 0;
+        opacity: 1;
+    }
+
+    .slider-button {
+        z-index: 1;
+    }
+}
+
+.slider-title {
+    font-size: 3.8rem;
+    transition: 2s 0.25s left, 2s 0.25s opacity;
+}
+
+.slider-text {
+    font-size: 2.2rem;
+    font-weight: 400;
+    transition: 2s 0.45s left, 2s 0.45s opacity;
+}
+
+.slider-button {
+    background: transparent;
+    border: 2px solid rgba(236, 240, 241, 0.5);
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 10px;
+    transition: 2s 0.65s left, 2s 0.65s opacity, 0.25s background-color;
+    width: 150px;
+    z-index: 0;
+
+    &:hover {
+        background: rgba(236, 240, 241, 0.5);
+        border: 2px solid rgba(236, 240, 241, 0);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.slider-dot {
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.slider-dots {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 25px;
+    margin-right: 40px;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+}
+
+.slider-dots-button {
+    background: rgba(255, 255, 255, 0.6);
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 20px;
+    margin: 5px;
+    overflow: hidden;
+    width: 20px;
+}
+
+.slider-dots-button-active {
+    .slider-dots-button {
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+    }
+}
+
+.slider-dots-button:focus {
+    outline: none;
+}

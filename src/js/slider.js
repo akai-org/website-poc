@@ -45,9 +45,9 @@ export class Slider {
 
         // change background-image
         const images = [
-            'https://images.pexels.com/photos/175274/pexels-photo-175274.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            'https://images.pexels.com/photos/808510/pexels-photo-808510.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-            'https://images.pexels.com/photos/784927/pexels-photo-784927.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+            'https://images.pexels.com/photos/7096/people-woman-coffee-meeting.jpg?auto=compress&cs=tinysrgb&h=650&w=940',
+            'https://images.pexels.com/photos/7095/people-coffee-notes-tea.jpg?auto=compress&cs=tinysrgb&h=650&w=940',
+            'https://images.pexels.com/photos/450271/pexels-photo-450271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
         ]
         this.slider.setAttribute('style', `background: url(${images[index]});background-size: cover; background-position: center center;`);
         
