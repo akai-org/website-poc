@@ -2,4 +2,39 @@
 
 .calendar {
     @extend %container;
+
+    h2 {
+        margin-bottom: 15px;
+    }
+    
+    .calendar-table {
+        border-spacing: -10px 5px;
+        margin-bottom: 15px;
+        table-layout: fixed;
+        text-align: center;
+        user-select: none;
+        width: 100%;
+        
+        td,
+        th {
+            font-size: 1.4vw;
+            height: 1.9vw;
+            padding: 0.15vw 0.4vw;
+            width: 1.9vw;
+        }
+    }    
+}
+
+.current-day {
+    background-color: $bluish;
+    border: 3px $bluish solid;
+    border-radius: 50%;
+    box-sizing: border-box;
+    color: $white;
+    font-weight: bold;   
+}
+
+.highlighted-day {
+    font-weight: bold;
+    position: relative;
 }

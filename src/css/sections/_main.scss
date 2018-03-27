@@ -5,4 +5,17 @@
     grid-template-columns: 2fr 1fr;
     margin: auto;
     width: 75%;
+
+    @media screen and (max-width: 600px) {
+        padding: 15px 0 25px;
+
+        h1 {
+            display: none;
+        }
+    
+        img {
+            margin: auto 0;
+            width: 100%;
+        }
+    }
 }
