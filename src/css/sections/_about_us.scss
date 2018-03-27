@@ -1,0 +1,40 @@
+.about {
+    @extend %container;
+
+    p {
+        color: $bluish;
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+}
+
+.stamp {
+    align-items: center;
+    display: flex;
+    margin-top: 30px;
+}
+
+.stamp-desc {
+    h3 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    p {
+        color: $description;
+        font-size: 1.4rem;
+    }
+}
+
+.icon-cont {
+    float: left;
+    min-width: 92px;
+    width: 92px;
+
+    i {
+        color: $bluish;
+        font-size: 500%;
+        margin-right: 10px;
+        padding: 10px;
+    }
+}
