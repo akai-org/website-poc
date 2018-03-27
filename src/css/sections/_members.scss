@@ -1,0 +1,56 @@
+@import '../utilities/placeholders';
+
+.members {
+    @extend %container;
+   
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    margin: auto;
+    width: 75%;
+    
+    a {
+        font-size: inherit;
+        margin-left: -10px;
+    }
+}
+
+.members-grid {
+    display: grid;
+    font-size: 1.6rem;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: -30px;
+    
+    .highlight {
+        color: $dark-gray;
+        display: block;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    @media screen and (max-width: 1100px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 760px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.member {
+    align-items: center;
+    display: flex;
+    margin-bottom: 30px;
+
+    .description {
+        margin: auto 0;
+    }
+}
+
+.member-img {
+    border-radius: 50%;
+    display: block;
+    height: 85px;
+    margin: 0 15px;
+    object-fit: cover;
+    width: 85px;
+}
