@@ -8,11 +8,7 @@ export class Calendar {
         this.parent = parent;
         this.container = null;
 
-        this.highlighted = [
-            {day: 1, desc: 'dzień pierwszy'},
-            {day: 13, desc: 'dzień trzynasty'},
-            {day: 17, desc: 'lorem ipsum'}
-        ]
+        this.highlighted = [1, 13, 17];
 
         this.init();
     }
@@ -21,7 +17,6 @@ export class Calendar {
         this.container.className = 'calendar-container'
         this.parent.appendChild(this.container);
         this.genCalendar();
-        this.bindEvents();
     }
     genCalendar() {
         // init table
@@ -78,10 +73,9 @@ export class Calendar {
 
             // add classes in order to style element properly
             td.classList.add('day');
-
-            if (this.highlighted.map(elem => elem.day).includes(i - firstMonthDay + 2)) {
+            
+            if (this.highlighted.includes(i+1)) {
                 td.classList.add('highlighted-day');
-                td.setAttribute('title',this.highlighted.filter(elem => elem.day === i - firstMonthDay + 2)[0].desc);
             }
 
             if (this.year === this.now.getFullYear() && this.month == this.now.getMonth() && this.day === i-firstMonthDay+2)
@@ -89,13 +83,6 @@ export class Calendar {
 
             tr.appendChild(td);
         }
-    }
-    bindEvents() {
-        this.container.addEventListener('click', function(e) {
-            if (e.target.tagName.toLowerCase() === 'td' && e.target.classList.contains('highlighted-day')) {
-                // action
-            }
-        }.bind(this));
     }
 }
 
