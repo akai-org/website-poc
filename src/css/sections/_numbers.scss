@@ -1,0 +1,33 @@
+.numbers {
+    font-family: 'Open Sans', sans-serif;
+    margin: 50px auto 70px;
+    text-align: center;
+    width: 75%;
+}
+
+.num-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    .fas {
+        color: $light-gray;
+        display: block;
+        font-size: 600%;
+        margin-bottom: 15px; 
+    }
+    
+    .num {
+        color: $orange;
+        display: block;
+        font-size: 7rem;
+        line-height: 7rem;
+    }
+    
+    .description {
+        color: $dark-gray;
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 4px;
+    }
+}
