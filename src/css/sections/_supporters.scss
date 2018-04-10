@@ -1,0 +1,17 @@
+.supporters {
+    @extend %container;
+
+    box-sizing: border-box;
+    margin: auto;
+    width: 75%;
+}
+
+.supporters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.supporter-img {
+    object-fit: cover;
+    width: 100%;
+}
