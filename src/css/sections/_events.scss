@@ -7,12 +7,24 @@
     grid-template-columns: repeat(3, 1fr);
     margin: auto;
     margin-bottom: 20px;
-    min-width: 1000px;
+    min-width: 960px;
     width: 75%;
     
     * {
         color: $white;
         font-weight: initial;
+    }
+
+    @media screen and (max-width: 960px) {
+        grid-template-columns: repeat(2, 1fr);
+        min-width: 480px;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 480px) {
+        grid-template-columns: 1fr;
+        min-width: 320px;
+        width: 100%;
     }
 }
 
@@ -77,9 +89,14 @@
     width: 100%;
     
     h4 {
+        display: inline;
         font-size: inherit;
         line-height: 3em;
         margin-left: 1.2em;
+        margin-right: 5em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;  
     }
     
     p {
