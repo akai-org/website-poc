@@ -1,0 +1,91 @@
+.events {
+    display: grid;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4rem;
+    grid-column-gap: 20px;
+    grid-row-gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+    margin-bottom: 20px;
+    min-width: 1000px;
+    width: 75%;
+    
+    * {
+        color: $white;
+        font-weight: initial;
+    }
+}
+
+.event-box {
+    cursor: pointer;
+    font-size: inherit;
+    height: 220px;
+    width: 100%;
+    
+    figure {
+        background: url('https://images.pexels.com/photos/7096/people-woman-coffee-meeting.jpg?auto=compress&cs=tinysrgb&h=650&w=940') center/cover;
+        box-sizing: border-box;
+        font-size: inherit;
+        height: 175px;
+        transition: background 0.3s ease-in;
+        
+        figcaption {
+            background: $bluish-hover;
+            box-sizing: border-box;
+            height: 100%;
+            opacity: 0;
+            padding: 2.5em;
+            transition: opacity 0.3s ease-in;
+            width: 100%;
+        }
+
+        h4 {
+            color: $orange;
+            display: none;
+            font-size: 1.4em;
+        }
+
+        p {
+            display: none;
+            font-size: 1.4em;
+        }
+    }
+
+    &:hover {
+        figure {
+            figcaption {
+                opacity: 1;
+            }
+            
+            h4 {
+                display: block;
+            }
+
+            p {
+                display: block;
+            }
+        }
+    }
+}
+
+.event-caption {
+    align-content: center;
+    background-color: $orange;
+    font-size: inherit;
+    height: 45px;
+    position: relative;
+    width: 100%;
+    
+    h4 {
+        font-size: inherit;
+        line-height: 3em;
+        margin-left: 1.2em;
+    }
+    
+    p {
+        font-size: inherit;
+        position: absolute;
+        right: 1.2em;
+        top: 0.25em;
+    }
+}
