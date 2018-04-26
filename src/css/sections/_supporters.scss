@@ -14,4 +14,11 @@
 .supporter-img {
     object-fit: cover;
     width: 100%;
+    transition: opacity 0.75s ease-in-out;
+    opacity: 1;
+}
+
+.supporter-img-hidden {
+    filter: alpha(opacity=50);
+    opacity: 0;
 }
